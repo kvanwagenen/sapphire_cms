@@ -1,0 +1,8 @@
+Description:
+    Generates a new angular template for SapphireCms
+
+Example:
+    rails generate sapphire_cms:ng_template template
+
+    This will create:
+        app/assets/templates/template.html.slim

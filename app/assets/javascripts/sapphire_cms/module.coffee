@@ -1,0 +1,1 @@
+SapphireAdmin = angular.module "SapphireAdmin", []
