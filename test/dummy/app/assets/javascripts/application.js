@@ -11,3 +11,4 @@
 // about supported directives.
 //
 //= require_tree .
+//= require sapphire_cms/sapphire_cms

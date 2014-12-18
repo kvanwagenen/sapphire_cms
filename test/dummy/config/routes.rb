@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  mount SapphireCms::Engine => "/sapphire_cms"
+  mount SapphireCms::Engine => "/sp"
 end

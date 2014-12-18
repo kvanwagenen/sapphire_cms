@@ -22,8 +22,11 @@ Gem::Specification.new do |s|
   s.add_dependency "rabl", "~> 0.11.5"
   s.add_dependency "slim-rails"
   s.add_dependency "coffee-rails"
-  s.add_dependency "rails-assets-angular"
-  s.add_dependency "rails-assets-bootstrap"
+  s.add_dependency 'sass-rails'
+  s.add_dependency 'jquery-rails'
+  s.add_dependency 'angularjs-rails'
+  s.add_dependency 'rails-assets-angular-bootstrap'
+  s.add_dependency 'rails-assets-bootstrap-sass-official'
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails", "~> 3.1.0" 

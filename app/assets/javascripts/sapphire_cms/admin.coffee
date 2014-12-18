@@ -1,2 +1,2 @@
-//= require ./module
-//= require_tree ./controllers
+#= require ./module
+#= require_tree ./controllers

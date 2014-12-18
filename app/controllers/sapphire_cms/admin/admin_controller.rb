@@ -1,9 +1,11 @@
 module SapphireCms
-  class AdminController < ApplicationController
+  module Admin
+    class AdminController < ApplicationController
 
-    def index
-      
+      def index
+        
+      end
+
     end
-
   end
 end

@@ -1,1 +1,1 @@
-SapphireAdmin = angular.module "SapphireAdmin", []
+window.SapphireAdmin = angular.module "SapphireAdmin", []

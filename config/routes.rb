@@ -1,5 +1,7 @@
 SapphireCms::Engine.routes.draw do
 
+  root to: 'admin/admin#index'
+
   namespace :api do
     resources :content_blocks
   end
