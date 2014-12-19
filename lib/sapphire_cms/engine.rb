@@ -4,6 +4,11 @@ module SapphireCms
   class Engine < ::Rails::Engine
     isolate_namespace SapphireCms
 
+    Rabl.configure do |config|
+      config.include_json_root = false
+      config.include_child_root = false
+    end
+
     config.generators do |g|
       g.test_framework :rspec
     end
