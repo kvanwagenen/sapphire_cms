@@ -13,4 +13,5 @@
 //= require jquery
 //= require bootstrap-sass-official
 //= require angular
+//= require angular-route
 //= require ./admin

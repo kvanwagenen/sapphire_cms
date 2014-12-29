@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'sass-rails'
   s.add_dependency 'jquery-rails'
   s.add_dependency 'angularjs-rails'
+  s.add_dependency 'devise'
   s.add_dependency 'rails-assets-angular-bootstrap'
   s.add_dependency 'rails-assets-bootstrap-sass-official'
 

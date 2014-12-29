@@ -1,4 +1,5 @@
 require 'slim-rails'
+require 'rabl'
 
 module SapphireCms
   class Engine < ::Rails::Engine
@@ -20,5 +21,8 @@ module SapphireCms
       Rails.application.config.assets.precompile += %w( bootstrap/* )
     end
 
+    initializer "sapphire_cms.config", :before => :load_config_initializers do |app|
+      app.config.sapphire_cms = SapphireCms::Config.new
+    end
   end
 end
