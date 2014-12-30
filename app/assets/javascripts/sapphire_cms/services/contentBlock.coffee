@@ -10,11 +10,27 @@ SapphireAdmin.factory "ContentBlockService", ["$http", ($http) ->
 				.then (response) ->
 					response.data
 
-		update: ->
+		save: (block) ->
+			if block.id
+				service.update(block)
+			else
+				service.create(block)
 
-		create: ->
+		update: (block) ->
+			$http.put("/sp/api/content_blocks/#{block.id}", block)
+				.success (data) ->
+					alert('Successfully saved!')
+				.error ->
+					alert('Error saving block')
+		create: (block) ->
+			$http.post("/sp/api/content_blocks", block)
+				.then (response) ->
+					response.data
 
-		destroy: ->
+		destroy: (block) ->
+			$http.delete("/sp/api/content_blocks/#{block.id}")
+				.then (response) ->
+					response.data
 
 	service
 ]

@@ -2,14 +2,22 @@ window.SapphireAdmin = angular.module "SapphireAdmin", ['ngRoute']
 
 SapphireAdmin.config ['$routeProvider', ($routeProvider) ->
 	$routeProvider
-		.when '/', {
-			templateUrl: 'assets/content-blocks/list.html',
+		.when('/', {
+			templateUrl: 'assets/content_blocks/list.html',
 			controller: 'ContentBlocksController'
-		}
-		.when '/content-block/:id/edit', {
-			templateUrl: 'assets/content-blocks/edit.html',
+		})
+		.when('/content-blocks', {
+			templateUrl: 'assets/content_blocks/list.html',
+			controller: 'ContentBlocksController'
+		})
+		.when('/content-blocks/:id/edit', {
+			templateUrl: 'assets/content_blocks/edit.html',
 			controller: 'ContentBlockEditController'
-		}
+		})
+		.when('/content-blocks/new', {
+			templateUrl: 'assets/content_blocks/new.html',
+			controller: 'ContentBlockNewController'
+		})
 ]
 
 SapphireAdmin.config ['$httpProvider', ($httpProvider) ->

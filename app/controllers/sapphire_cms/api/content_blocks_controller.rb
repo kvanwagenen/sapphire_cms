@@ -13,7 +13,6 @@ module SapphireCms
         @block = ContentBlock.new(@params.permit(:title, :body, :slug))
         ensure_valid_update @block do
           ensure_unique do
-            binding.pry
             success = @block.save
             if success
               render :show, status: :created, location: api_content_block_url(@block)
