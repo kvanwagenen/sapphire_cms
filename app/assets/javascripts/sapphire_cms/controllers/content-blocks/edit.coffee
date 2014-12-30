@@ -4,4 +4,8 @@ SapphireAdmin.controller 'ContentBlockEditController', ['$scope', '$routeParams'
 			$scope.block = data
 	$scope.save = ->
 		ContentBlockService.save($scope.block)
+			.then (success) ->
+				alert('Successfully saved!')
+			, (err) ->
+				alert('Error saving block')					
 ]

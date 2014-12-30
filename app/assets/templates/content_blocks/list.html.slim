@@ -18,8 +18,8 @@
 					| {{ block.title }}
 				td
 					| {{ block.slug }}
-				td 
-					| {{ block.updated_at }}
+				td
+					| {{ block.updated_at | date:'MMM d, y h:mm a' }}
 				td
 					ul.block-actions
 						li

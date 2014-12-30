@@ -18,10 +18,8 @@ SapphireAdmin.factory "ContentBlockService", ["$http", ($http) ->
 
 		update: (block) ->
 			$http.put("/sp/api/content_blocks/#{block.id}", block)
-				.success (data) ->
-					alert('Successfully saved!')
-				.error ->
-					alert('Error saving block')
+				.then (response) ->
+					response.data
 		create: (block) ->
 			$http.post("/sp/api/content_blocks", block)
 				.then (response) ->

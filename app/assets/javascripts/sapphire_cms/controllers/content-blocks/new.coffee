@@ -6,9 +6,8 @@ SapphireAdmin.controller 'ContentBlockNewController', ['$scope', '$location', 'C
 	$scope.save = ->
 		ContentBlockService.save($scope.block)
 			.then((data) ->
-				$location.url('#/content-blocks')
+				$location.path('/content-blocks')
 			, (err) ->
 				alert('Error creating content block')
 			)
-
 ]

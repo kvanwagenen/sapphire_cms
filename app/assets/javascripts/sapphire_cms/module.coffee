@@ -22,4 +22,25 @@ SapphireAdmin.config ['$routeProvider', ($routeProvider) ->
 
 SapphireAdmin.config ['$httpProvider', ($httpProvider) ->
 	$httpProvider.defaults.headers.common['Accept'] = '*/*'
+
+	$httpProvider.interceptors.push [->
+		iso8601RegEx = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
+		response: (response) ->
+			convertDates = (obj) ->
+ 
+            for key, value of obj
+ 
+              #If it is a string of the expected form convert to date  
+              type = typeof value
+              if type is 'string' and iso8601RegEx.test value
+                  obj[key] = new Date(value)
+ 
+              #Recursively evaluate nested objects
+              else if type is 'object'
+                convertDates value
+ 
+          convertDates response.data
+ 
+          response
+	]
 ]
