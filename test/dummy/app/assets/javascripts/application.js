@@ -10,5 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree .
-//= require sapphire_cms/sapphire_cms
+//= require jquery
+//= require angular
+//= require angular-route
+//= require app

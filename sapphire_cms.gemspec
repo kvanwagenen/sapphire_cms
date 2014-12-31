@@ -24,9 +24,11 @@ Gem::Specification.new do |s|
   s.add_dependency "coffee-rails"
   s.add_dependency 'sass-rails'
   s.add_dependency 'jquery-rails'
-  s.add_dependency 'angularjs-rails'
   s.add_dependency 'devise'
+  s.add_dependency 'rails-assets-angular'
+  s.add_dependency 'rails-assets-angular-route'
   s.add_dependency 'rails-assets-angular-bootstrap'
+  s.add_dependency 'rails-assets-angular-sanitize'
   s.add_dependency 'rails-assets-bootstrap-sass-official'
 
   s.add_development_dependency "sqlite3"
