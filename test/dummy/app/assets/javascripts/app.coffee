@@ -1,11 +1,18 @@
-window.SapphireTest = angular.module 'app', ['ngRoute']
+window.SapphireTest = angular.module 'app', ['ngRoute', 'sp.client']
 
-SapphireTest.config ['$routeProvider', ($routeProvider) ->
+SapphireTest.config ['$routeProvider', 'SpViewBuilderProvider', ($routeProvider, SpViewBuilderProvider) ->
 	$routeProvider
-		.when '/:slug', {
-			template: ($routeParams) ->
-				"<ng-include src=\"'/sp/#{$routeParams.slug}'\"></ng-include>"
+		.when '/about', {
+			templateUrl: "/assets/about.html"
 		}
+		.when '/:slug*', {
+			template: SpViewBuilderProvider.template
+			controller: 'SpViewController'			
+		}
+]
+
+SapphireTest.run ['SpViewBuilder', (SpViewBuilder) ->
+	console.log 'SpViewBuilder initialized.'
 ]
 
 SapphireTest.factory 'BlockService', ['$http', ($http) ->

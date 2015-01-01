@@ -13,4 +13,5 @@
 //= require jquery
 //= require angular
 //= require angular-route
+//= require sapphire_cms/client/client
 //= require app

@@ -5,7 +5,11 @@ module SapphireCms
       before_action :wrap_parameters
 
       def index
-        @blocks = ContentBlock.all
+        if @params.permit(:slug).any?
+          @blocks = ContentBlock.where(@params.permit(:slug))
+        else
+          @blocks = ContentBlock.all
+        end
         respond_with @blocks
       end
 

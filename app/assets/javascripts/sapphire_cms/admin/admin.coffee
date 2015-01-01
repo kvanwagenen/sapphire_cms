@@ -4,4 +4,5 @@
 #= require ./module
 #= require_tree ./directives
 #= require_tree ./controllers
-#= require_tree ./services
+#= require ../common/module
+#= require_tree ../common/services
