@@ -11,22 +11,23 @@ SpViewBuilder = (ContentBlockService, builder) ->
 			angular.forEach blocks, (block) ->
 				template = template.replace("<sp-yield></sp-yield>", block.body)
 			template
+		getLayout = (layout_block_id) ->
+			ContentBlockService.find(layout_block_id)
+				.then (layout) ->
+					block = layout
+					blocks.push(layout)
+					if block.layout_block_id?
+						getLayout(block.layout_block_id)
+
 		ContentBlockService.find_by_slug($routeParams.slug)
 			.then (block) ->
 				blocks.push(block)
 				if block.layout_block_id?
-					ContentBlockService.find(block.layout_block_id)
-					.then (layout) ->
-						block = layout
-						blocks.push(layout)
-						if block.layout_block_id?
-							ContentBlockService.find(block.layout_block_id)
-							.then (layout) ->
-								block = layout
-								blocks.push(layout)
-								compile()
-						else
+					getLayout(block.layout_block_id)
+						.then ->
 							compile()
+				else
+					compile()
 		
 	service = 
 		builder: builder
