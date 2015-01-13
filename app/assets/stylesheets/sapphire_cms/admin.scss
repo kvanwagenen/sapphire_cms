@@ -1,1 +1,40 @@
-@import "bootstrap-sass-official"
+@import "bootstrap-sass-official";
+
+#content-block-list-wrapper {
+  @extend .container;
+}
+
+#create-new-button {
+  @extend .btn;
+  @extend .btn-success;
+}
+
+.block-table-wrapper {
+  @extend .table-responsive;
+}
+
+.content-block-table {
+  @extend .table;
+  @extend .table-striped;
+  @extend .table-bordered;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.block-actions {
+  @extend .list-unstyled;
+  margin: 0;
+  li {
+    display: inline-block;
+  }
+}
+
+.edit-block-button {
+  @extend .btn;
+  @extend .btn-default;
+}
+
+.delete-block-button {
+  @extend .btn;
+  @extend .btn-danger;
+}

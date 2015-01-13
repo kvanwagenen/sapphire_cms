@@ -1,34 +1,37 @@
 #content-block-list-wrapper
 	h1 Content Blocks
-	a href="#/content-blocks/new" 
+	a#create-new-button href="#/content-blocks/new" 
 		i.fa.fa-plus
 		| &nbsp;Create New
-	table.content-block-table
-		thead
-			tr
-				th
-					| Id
-				th
-					| Title
-				th
-					| Slug
-				th
-					| Last Updated
-		tbody
-			tr ng-repeat="block in contentBlocks"
-				td 	
-					| {{ block.id }}
-				td 
-					| {{ block.title }}
-				td
-					| {{ block.slug }}
-				td
-					| {{ block.updated_at | date:'MMM d, y h:mm a' }}
-				td
-					ul.block-actions
-						li
-							a ng-href="#/content-blocks/{{block.id}}/edit" Edit
-						li
-							button ng-confirm-message="Are you sure you want to delete this block?" ng-confirm-click="destroy(block)" 
-								i.fa.fa-trash
-								| &nbsp; Delete
+	.block-table-wrapper
+		table.content-block-table
+			thead
+				tr
+					th
+						| Id
+					th
+						| Title
+					th
+						| Slug
+					th
+						| Last Updated
+					th
+					  | Actions
+			tbody
+				tr ng-repeat="block in contentBlocks"
+					td 	
+						| {{ block.id }}
+					td 
+						| {{ block.title }}
+					td
+						| {{ block.slug }}
+					td
+						| {{ block.updated_at | date:'MMM d, y h:mm a' }}
+					td
+						ul.block-actions
+							li
+								a.edit-block-button ng-href="#/content-blocks/{{block.id}}/edit" Edit
+							li
+								button.delete-block-button ng-confirm-message="Are you sure you want to delete this block?" ng-confirm-click="destroy(block)" 
+									i.fa.fa-trash
+									| &nbsp; Delete
