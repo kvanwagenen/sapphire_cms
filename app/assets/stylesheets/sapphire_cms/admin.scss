@@ -1,6 +1,17 @@
 @import "bootstrap-sass-official";
+@import "edit";
 
-#content-block-list-wrapper {
+// Normalizing styles
+dl {
+  margin: 0;
+}
+
+// Apply bootstrap globally
+input, textarea {
+  @extend .form-control;
+}
+
+#app {
   @extend .container;
 }
 
