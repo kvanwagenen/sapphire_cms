@@ -29,7 +29,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails-assets-angular-route'
   s.add_dependency 'rails-assets-angular-bootstrap'
   s.add_dependency 'rails-assets-angular-sanitize'
-  s.add_dependency 'rails-assets-angular-ui-ace'
   s.add_dependency 'rails-assets-bootstrap-sass-official'
 
   s.add_development_dependency "sqlite3"
