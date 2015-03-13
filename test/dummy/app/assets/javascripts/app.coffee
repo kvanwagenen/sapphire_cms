@@ -6,8 +6,7 @@ SapphireTest.config ['$routeProvider', 'SpViewBuilderProvider', ($routeProvider,
 			templateUrl: "/assets/about.html"
 		}
 		.when '/:slug*', {
-			template: SpViewBuilderProvider.template
-			controller: 'SpViewController'			
+			template: SpViewBuilderProvider.template		
 		}
 ]
 
