@@ -1,3 +1,3 @@
 object @block
-attributes :id, :title, :body, :slug, :layout_block_id
+attributes :id, :title, :slug, :version, :status, :body, :layout_block_slug
 node(:updated_at){|block|block.updated_at.iso8601}

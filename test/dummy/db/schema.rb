@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141231210231) do
+ActiveRecord::Schema.define(version: 20150122001255) do
 
   create_table "sapphire_cms_content_blocks", force: true do |t|
     t.string   "title"
@@ -19,9 +19,11 @@ ActiveRecord::Schema.define(version: 20141231210231) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "layout_block_id"
+    t.integer  "version"
+    t.string   "status"
+    t.string   "layout_block_slug"
   end
 
-  add_index "sapphire_cms_content_blocks", ["slug"], name: "index_sapphire_cms_content_blocks_on_slug", unique: true
+  add_index "sapphire_cms_content_blocks", ["slug", "version"], name: "index_sapphire_cms_content_blocks_on_slug_and_version", unique: true
 
 end

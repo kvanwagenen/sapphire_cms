@@ -1,13 +1,15 @@
 module SapphireCms
   class ContentBlock < ActiveRecord::Base
-  	belongs_to :layout_block, class_name: "SapphireCms::ContentBlock", foreign_key: :layout_block_id
+    def layout_block
+      if @layout_block.nil?
+        @layout_block = ContentBlock.find_by_slug(layout_block_slug)
+      end
+      @layout_block
+    end
 
-  	def page
-  		if layout_block
-  			layout_block.page.gsub('<sp-yield></sp-yield>', body)
-  		else
-  			body
-  		end
-  	end
+    def layout_block= block
+      self.layout_block_slug = block.slug
+      @layout_block = block
+    end
   end
 end

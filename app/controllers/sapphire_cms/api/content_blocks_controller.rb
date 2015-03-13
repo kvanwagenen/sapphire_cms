@@ -5,16 +5,20 @@ module SapphireCms
       before_action :wrap_parameters
 
       def index
-        if @params.permit(:slug).any?
+        @params = @params.permit(:slug, :includeUnpublished)
+        if @params[:slug]
           @blocks = ContentBlock.where(@params.permit(:slug))
         else
           @blocks = ContentBlock.all
         end
-        respond_with @blocks
+        if @params[:includeUnpublished] && @params[:includeUnpublished] == "false"
+          @blocks = @blocks.where(status: "published")
+        end
+        respond_with @blocks.order(version: :desc)
       end
 
       def create
-        @block = ContentBlock.new(@params.permit(:title, :body, :slug, :layout_block_id))
+        @block = ContentBlock.new(@params.permit(:title, :body, :slug, :layout_block_slug, :status, :version))
         ensure_valid_update @block do
           ensure_unique do
             success = @block.save
@@ -31,7 +35,7 @@ module SapphireCms
         @block = ContentBlock.find(@params.permit(:id)[:id])
         ensure_valid_update @block do
           ensure_unique do
-            if @block.update_attributes(@params.permit(:title, :body, :slug, :layout_block_id))
+            if @block.update_attributes(@params.permit(:title, :body, :slug, :layout_block_slug, :status, :version))
               render :show, status: :ok
             else
               render_invalid_resource(@block)
