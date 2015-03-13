@@ -5,11 +5,11 @@ require "sapphire_cms/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "sapphire_cms"
+  s.name        = "sapphire_cms_rails"
   s.version     = SapphireCms::VERSION
   s.authors     = ["Kyle Van Wagenen"]
   s.email       = ["kvanwagenen@gmail.com"]
-  s.homepage    = "https://github.com/kvanwagenen/sapphire_cms"
+  s.homepage    = "https://github.com/kvanwagenen/sapphire_cms_rails"
   s.summary     = "Lightweight Rails CMS for AngularJS applications."
   s.description = "Lightweight Rails CMS for AngularJS applications."
   s.license     = "MIT"
