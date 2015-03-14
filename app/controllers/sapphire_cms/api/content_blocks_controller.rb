@@ -18,7 +18,7 @@ module SapphireCms
       end
 
       def create
-        @block = ContentBlock.new(@params.permit(:title, :body, :slug, :layout_block_slug, :status, :version))
+        @block = ContentBlock.new(@params.permit(:title, :body, :slug, :layoutBlockSlug, :status, :version))
         ensure_valid_update @block do
           ensure_unique do
             success = @block.save
@@ -65,6 +65,11 @@ module SapphireCms
 
       def wrap_parameters
         @params = ActionController::Parameters.new(params)
+      end
+
+      def convert_params_to_snake_case
+        @params.keys.each do |key|
+          
       end
 
       def render_error(msg, status=:unprocessable_entity)
