@@ -1,6 +1,6 @@
 window.SapphireTest = angular.module 'app', ['ngRoute', 'sp.client']
 
-SapphireTest.config ['$routeProvider', 'SpViewBuilderProvider', ($routeProvider, SpViewBuilderProvider) ->
+SapphireTest.config ['$routeProvider', '$locationProvider', 'SpViewBuilderProvider', ($routeProvider, $locationProvider, SpViewBuilderProvider) ->
 	$routeProvider
 		.when '/about', {
 			templateUrl: "/assets/about.html"
@@ -8,6 +8,7 @@ SapphireTest.config ['$routeProvider', 'SpViewBuilderProvider', ($routeProvider,
 		.when '/:slug*', {
 			template: SpViewBuilderProvider.template		
 		}
+	$locationProvider.html5Mode true
 ]
 
 SapphireTest.run ['SpViewBuilder', (SpViewBuilder) ->
