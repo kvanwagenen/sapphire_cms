@@ -14,7 +14,8 @@ module SapphireCms
         if @params[:includeUnpublished] && @params[:includeUnpublished] == "false"
           @blocks = @blocks.where(status: "published")
         end
-        respond_with @blocks.order(version: :desc)
+        @blocks = @blocks.order('version DESC')
+        respond_with @blocks
       end
 
       def create
