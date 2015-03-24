@@ -3,6 +3,7 @@ SapphireCms::Engine.routes.draw do
   root to: 'admin/admin#index'
 
   namespace :api do
+    get 'content_blocks/slugs', to: 'content_blocks#slugs'
     resources :content_blocks
   end
 

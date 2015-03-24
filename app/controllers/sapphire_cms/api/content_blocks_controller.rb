@@ -62,6 +62,10 @@ module SapphireCms
         end
       end
 
+      def slugs
+        render json: view_context.slug_manifest # Lives in client_helper
+      end
+
       private
 
       def wrap_parameters
