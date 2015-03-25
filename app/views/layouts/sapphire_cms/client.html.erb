@@ -4,7 +4,7 @@
   <title>Sapphire CMS Client</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_tag do %>
-  	window.SlugManifest = <%= raw slug_manifest %>
+  	window.RouteManifest = <%= raw route_manifest %>
   <% end %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>

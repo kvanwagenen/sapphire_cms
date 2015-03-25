@@ -62,8 +62,8 @@ module SapphireCms
         end
       end
 
-      def slugs
-        render json: view_context.slug_manifest # Lives in client_helper
+      def routes
+        render json: view_context.route_manifest # Lives in client_helper
       end
 
       private
