@@ -1,3 +1,4 @@
+require 'responders'
 require 'paper_trail'
 require 'rabl'
 require 'jquery-rails'
