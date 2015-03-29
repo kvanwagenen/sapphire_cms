@@ -2,6 +2,7 @@ module SapphireCms
   module Api
     class BaseController < ApplicationController
       before_action :ensure_user_authenticated
+      skip_before_action :verify_authenticity_token
 
       private
 
