@@ -19,7 +19,7 @@ module SapphireCms
       end
 
       def create
-        @block = ContentBlock.new(@params.permit(:title, :body, :slug, :layout_block_slug, :status, :version))
+        @block = ContentBlock.new(@params.permit(:title, :body, :slug, :layout_block_slug, :status, :version, :precache))
         ensure_valid_update @block do
           ensure_unique do
             success = @block.save
@@ -36,7 +36,7 @@ module SapphireCms
         @block = ContentBlock.find(@params.permit(:id)[:id])
         ensure_valid_update @block do
           ensure_unique do
-            if @block.update_attributes(@params.permit(:title, :body, :slug, :layout_block_slug, :status, :version))
+            if @block.update_attributes(@params.permit(:title, :body, :slug, :layout_block_slug, :status, :version, :precache))
               render :show, status: :ok
             else
               render_invalid_resource(@block)
