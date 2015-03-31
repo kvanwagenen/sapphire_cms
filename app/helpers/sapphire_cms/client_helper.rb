@@ -8,7 +8,7 @@ module SapphireCms
     end
 
     def precached_blocks
-      blocks = ContentBlock.where(precache: true).order('version DESC').group(:slug)
+      blocks = ContentBlock.where(precache: true, status: 'published').order('version DESC').group(:slug)
       blocks.to_json
     end
   end
