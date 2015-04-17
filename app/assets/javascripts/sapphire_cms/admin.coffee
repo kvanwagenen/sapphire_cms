@@ -1,6 +1,8 @@
 #= require jquery
 #= require angular
+#= require angular-cookie
 #= require angular-route
+#= require ng-token-auth
 #= require ./ace.js
 #= require ./ui-ace.js
 #= require ./sapphire-cms.core.js

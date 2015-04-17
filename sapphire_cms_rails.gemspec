@@ -21,15 +21,18 @@ Gem::Specification.new do |s|
   s.add_dependency "responders", "~> 2.0"
   s.add_dependency "paper_trail", "~> 3.0.6"
   s.add_dependency "rabl", "~> 0.9.4.pre1"
+  s.add_dependency 'devise_token_auth'
+  s.add_dependency 'omniauth'
   s.add_dependency "slim-rails"
   s.add_dependency "coffee-rails"
   s.add_dependency 'sass-rails'
   s.add_dependency 'jquery-rails'
-  s.add_dependency 'devise'
   s.add_dependency 'rails-assets-angular'
+  s.add_dependency 'rails-assets-angular-cookie'
   s.add_dependency 'rails-assets-angular-route'
   s.add_dependency 'rails-assets-angular-bootstrap'
   s.add_dependency 'rails-assets-angular-sanitize'
+  s.add_dependency 'rails-assets-ng-token-auth'
   s.add_dependency 'rails-assets-bootstrap-sass-official'
 
   s.add_development_dependency "sqlite3"
