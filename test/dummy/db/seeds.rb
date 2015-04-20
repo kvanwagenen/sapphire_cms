@@ -1,0 +1,1 @@
+SapphireCms::Engine.load_seed

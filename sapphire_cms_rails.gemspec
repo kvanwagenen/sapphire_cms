@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rabl", "~> 0.9.4.pre1"
   s.add_dependency 'devise_token_auth'
   s.add_dependency 'omniauth'
+  s.add_dependency 'cancancan', '~> 1.10'
   s.add_dependency "slim-rails"
   s.add_dependency "coffee-rails"
   s.add_dependency 'sass-rails'

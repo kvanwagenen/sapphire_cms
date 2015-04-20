@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416224505) do
+ActiveRecord::Schema.define(version: 20150420233719) do
 
   create_table "sapphire_cms_content_blocks", force: :cascade do |t|
     t.string   "title",             limit: 255
@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 20150416224505) do
   end
 
   add_index "sapphire_cms_content_blocks", ["slug", "version"], name: "index_sapphire_cms_content_blocks_on_slug_and_version", unique: true
+
+  create_table "sapphire_cms_roles", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",                            null: false
