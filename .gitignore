@@ -13,4 +13,4 @@ app/assets/javascripts/sapphire_cms/sapphire-cms.admin.js
 app/assets/javascripts/sapphire_cms/sapphire-cms.client.js
 app/assets/javascripts/sapphire_cms/sapphire-cms.core.js
 app/assets/stylesheets/sapphire_cms/sapphire-cms.admin.css
-app/assets/templates/content_blocks/
+app/assets/templates/

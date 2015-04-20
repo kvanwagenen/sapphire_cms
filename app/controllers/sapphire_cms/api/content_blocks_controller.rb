@@ -2,6 +2,7 @@ module SapphireCms
   module Api
     class ContentBlocksController < BaseController
       respond_to :json
+      before_action :authenticate_user!, :except => [:index, :show]
       before_action :wrap_parameters
 
       def index
@@ -9,10 +10,13 @@ module SapphireCms
         if @params[:slug]
           @blocks = ContentBlock.where(@params.permit(:slug))
         else
+          authenticate_user!
           @blocks = ContentBlock.all
         end
         if @params[:includeUnpublished] && @params[:includeUnpublished] == "false"
           @blocks = @blocks.where(status: "published")
+        else
+          authenticate_user!
         end
         @blocks = @blocks.order('version DESC')
         respond_with @blocks
@@ -47,8 +51,10 @@ module SapphireCms
 
       def show
         begin
-          @block = ContentBlock.find(params[:id])
-          respond_with @block
+          if params.permit(:id)
+            @block = ContentBlock.find(params[:id])
+            respond_with @block
+          end
         rescue ActiveRecord::RecordNotFound
           render_error "Block with id #{params[:id]} not found.", :not_found
         end
