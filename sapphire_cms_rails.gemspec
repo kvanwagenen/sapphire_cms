@@ -26,11 +26,11 @@ Gem::Specification.new do |s|
   s.add_dependency 'sass-rails'
   s.add_dependency 'jquery-rails'
   s.add_dependency 'devise'
-  s.add_dependency 'rails-assets-angular'
-  s.add_dependency 'rails-assets-angular-route'
-  s.add_dependency 'rails-assets-angular-bootstrap'
-  s.add_dependency 'rails-assets-angular-sanitize'
-  s.add_dependency 'rails-assets-bootstrap-sass-official'
+  s.add_dependency 'rails-assets-angular', '1.3.17'
+  s.add_dependency 'rails-assets-angular-route', '1.3.17'
+  s.add_dependency 'rails-assets-angular-bootstrap', '0.13.1'
+  s.add_dependency 'rails-assets-angular-sanitize', '1.3.17'
+  s.add_dependency 'rails-assets-bootstrap-sass-official', '3.3.4'
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails", "~> 3.1.0" 
